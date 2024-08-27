@@ -1,5 +1,7 @@
 package org.contact_list_mysql;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,7 +9,7 @@ import java.sql.SQLException;
 
 public class ContactDAO {
 
-    public static void createContactDB(Contact contact) {
+    public static void createContactDB(@NotNull Contact contact) {
         // Iniciar conexion con la base de datos
         ConnectionDB connection = new ConnectionDB();
 
@@ -103,6 +105,26 @@ public class ContactDAO {
             }
         } catch (SQLException e) {
             System.out.println("Error: ¡It was not possible to delete the contact!");
+            System.out.println("Check the data you are entering.");
+        }
+    }
+
+    public static void emptyAgendaDB() {
+        ConnectionDB connection = new ConnectionDB();
+
+        try(Connection connect = connection.conecctionDB()) {
+            PreparedStatement preparedStatement = null;
+            try {
+                String query = "TRUNCATE TABLE contact";
+                preparedStatement = connect.prepareStatement(query);
+                preparedStatement.executeUpdate();
+                System.out.println("¡The contacts has been deleted successfully!");
+
+            } catch (SQLException e) {
+                System.out.println("¡It was not possible to delete the contacts!");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error: ¡It was not possible to delete the contacts!");
             System.out.println("Check the data you are entering.");
         }
     }

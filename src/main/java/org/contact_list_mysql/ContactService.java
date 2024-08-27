@@ -88,4 +88,8 @@ public class ContactService {
         }
         ContactDAO.deleteContactDB(idContact);
     }
+
+    public static void emptyAgenda() {
+        ContactDAO.emptyAgendaDB();
+    }
 }

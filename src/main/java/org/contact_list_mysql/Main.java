@@ -18,7 +18,8 @@ public class Main {
             System.out.println("    2. Show contacts.");
             System.out.println("    3. Update contact.");
             System.out.println("    4. Delete contact.");
-            System.out.println("    5. Exit.");
+            System.out.println("    5. Empty Agenda");
+            System.out.println("    6. Exit.");
             System.out.print("Your choice: ");
 
             try {
@@ -43,6 +44,9 @@ public class Main {
                     ContactService.deleteContact();
                     break;
                 case 5:
+                    ContactService.emptyAgenda();
+                    break;
+                case 6:
                     System.exit(0);
                     break;
                 default:
