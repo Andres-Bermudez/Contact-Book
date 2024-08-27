@@ -8,10 +8,10 @@ public class ConnectionDB {
 
     public Connection conecctionDB() {
 
-        // Información de conexión
+        // Información de conexión a con la base de datos
         String url = "jdbc:mysql://localhost:3306/contact_list_db";
         String username = "arsenius";
-        String password = "debiandell*";
+        String password = "";
 
         Connection connection = null;
 

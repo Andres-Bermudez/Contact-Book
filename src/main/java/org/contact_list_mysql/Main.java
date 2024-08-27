@@ -24,7 +24,9 @@ public class Main {
             try {
                 userOption = sc.nextInt();
             } catch (InputMismatchException e) {
+                System.out.println();
                 System.out.println("Error: ¡Remember to choose from the available options!");
+                System.exit(0);
             }
 
             switch (userOption) {

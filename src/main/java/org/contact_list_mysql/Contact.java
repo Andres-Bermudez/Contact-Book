@@ -1,6 +1,7 @@
 package org.contact_list_mysql;
 
 public class Contact {
+    private int id;
     private String name;
     private String last_name;
     private String cellphone_number;
@@ -13,6 +14,14 @@ public class Contact {
         this.name = name;
         this.last_name = last_name;
         this.cellphone_number = cellphone_number;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
