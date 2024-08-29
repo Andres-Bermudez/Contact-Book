@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 public class ContactDAO {
 
-    public static void createContactDB(@NotNull Contact contact) {
+    public static void createContactDB(Contact contact) {
         // Iniciar conexion con la base de datos
         ConnectionDB connection = new ConnectionDB();
 
@@ -106,6 +106,36 @@ public class ContactDAO {
         } catch (SQLException e) {
             System.out.println("Error: ¡It was not possible to delete the contact!");
             System.out.println("Check the data you are entering.");
+        }
+    }
+
+    public static void searchContact(int id) {
+        ConnectionDB connection = new ConnectionDB();
+
+        // Objeto que nos permite traer los datos en filas para ser mostrados
+        ResultSet resultset = null;
+
+        try(Connection connect = connection.conecctionDB()) {
+            PreparedStatement preparedStatement = null;
+            try {
+                String query = "SELECT * FROM contact WHERE id = ?";
+
+                preparedStatement = connect.prepareStatement(query);
+                preparedStatement.setInt(1, id);
+                resultset = preparedStatement.executeQuery();
+
+                while (resultset.next()) {
+                    System.out.println();
+                    System.out.println("ID: " + resultset.getInt("id"));
+                    System.out.println("Name: " + resultset.getString("name"));
+                    System.out.println("Last_Name: " + resultset.getString("last_name"));
+                    System.out.println("Cellphone Number: " + resultset.getString("cellphone_number"));
+                }
+            } catch (SQLException e) {
+                System.out.println("Error: ¡Could not read data!");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error connecting to database.");
         }
     }
 

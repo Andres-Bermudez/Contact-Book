@@ -81,12 +81,32 @@ public class ContactService {
 
         try {
             idContact = sc.nextInt();
+
         } catch (InputMismatchException e) {
             System.out.println();
             System.out.println("Error: ¡The id must be a numeric value!");
             deleteContact();
         }
-        ContactDAO.deleteContactDB(idContact);
+
+        System.out.println();
+        System.out.println(">>> The contact you are going to delete is:");
+        ContactDAO.searchContact(idContact);
+
+        sc.nextLine();
+
+        // Confirmar eliminacion del contacto
+        String confirmation = "";
+
+        System.out.println();
+        System.out.print("Enter 'Yes' to confirm the deletion of the contact: ");
+        confirmation = sc.nextLine();
+
+        if (confirmation.equals("Yes")) {
+            ContactDAO.deleteContactDB(idContact);
+        } else {
+            System.out.println();
+            System.out.println("¡Operation cancelled!");
+        }
     }
 
     public static void emptyAgenda() {
