@@ -1,5 +1,6 @@
-package org.contact_list_mysql;
+package org.contactbook;
 
+import org.contactbook.service.ContactService;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 

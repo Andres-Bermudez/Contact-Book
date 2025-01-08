@@ -1,7 +1,6 @@
-package org.contact_list_mysql;
+package org.contactbook.models;
 
-import org.jetbrains.annotations.NotNull;
-
+import org.contactbook.database.ConnectionDB;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,7 +13,7 @@ public class ContactDAO {
         ConnectionDB connection = new ConnectionDB();
 
         try(Connection connect = connection.conecctionDB()) {
-            // Objeto para preparar la sentencia
+            // Objeto para preparar la sentencia SQL
             PreparedStatement preparedStatement = null;
             try {
                 String query = "INSERT INTO contact(name, last_name, cellphone_number) VALUES (?, ?, ?)";

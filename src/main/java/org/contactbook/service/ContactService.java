@@ -1,4 +1,7 @@
-package org.contact_list_mysql;
+package org.contactbook.service;
+
+import org.contactbook.models.Contact;
+import org.contactbook.models.ContactDAO;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

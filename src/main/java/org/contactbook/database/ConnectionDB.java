@@ -1,4 +1,4 @@
-package org.contact_list_mysql;
+package org.contactbook.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,9 +9,9 @@ public class ConnectionDB {
     public Connection conecctionDB() {
 
         // Información de conexión a con la base de datos
-        String url = "jdbc:mysql://localhost:3306/contact_list_db";
-        String username = "arsenius";
-        String password = "";
+        String url = "jdbc:mysql://localhost:3306/${NAME_DATABASE}";
+        String username = "${USERNAME}";
+        String password = "${PASSWORD}";
 
         Connection connection = null;
 
@@ -20,11 +20,12 @@ public class ConnectionDB {
             connection = DriverManager.getConnection(url, username, password);
             if (connection != null) {
                 System.out.println("¡Successful Connection!");
+                return connection;
             }
 
         } catch (SQLException e) {
             System.out.println("Error connecting to database.");
         }
-        return connection;
+        return null;
     }
 }

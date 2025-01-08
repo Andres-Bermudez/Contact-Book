@@ -1,16 +1,24 @@
-# Agenda de Contactos
+# Contact Book
 
-Esta es una agenda de contactos desarrollada en Java 
-con Maven, utilizando programación orientada a objetos 
-y con conexion a MySQL con las cuatro(4) funciones basicas
-de la persistencia de datos.
+- Saved Contacts:
+![contacts.png](images/contacts.png)
 
-## Entre sus funcionalidades destacan:
+This is a contact book developed in Java applying
+object-oriented programming and using Maven as a dependency 
+manager, with a database in MySQL applying the four (4) basic
+functions of data persistence (CRUD).
 
-#### CREAR CONTACTOS: Permite añadir nuevos contactos a la agenda.
+## Its features include:
 
-#### VISUALIZAR TUS CONTACTOS: Muestra una lista completa de todos los contactos almacenados.
+#### CREATE CONTACTS:
+Allows you to add new contacts to your address book.
 
-#### ACTUALIZAR TUS CONTACTOS: Ofrece la posibilidad de actualizar la información de un contacto existente.
+#### VIEW YOUR CONTACTS:
+Displays a complete list of all stored contacts.
 
-#### ELIMINAR CONTACTOS: Permite borrar contactos de la agenda.
+#### UPDATE YOUR CONTACTS:
+Provides the ability to update the
+information of an existing contact.
+
+#### DELETE CONTACTS:
+Allows you to delete contacts from your address book.

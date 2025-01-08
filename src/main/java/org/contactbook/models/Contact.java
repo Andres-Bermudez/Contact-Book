@@ -1,4 +1,4 @@
-package org.contact_list_mysql;
+package org.contactbook.models;
 
 public class Contact {
     private int id;
